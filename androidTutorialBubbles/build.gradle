@@ -5,20 +5,14 @@ repositories {
 
 
 apply plugin: 'com.android.library'
-apply plugin: 'findbugs'
-apply plugin: 'com.novoda.bintray-release'
 
-findbugs {
-    toolVersion = "3.0.1"
-}
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion 23
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0.0"
     }
@@ -31,20 +25,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    findbugs configurations.findbugsPlugins.dependencies
-    findbugsPlugins 'com.mebigfatguy.fb-contrib:fb-contrib:6.0.1'
-    compile 'com.google.code.findbugs:jsr305:2.0.1'
 }
 
-publish {
-    userOrg = 'lovoo'
-    groupId = 'com.lovoo'
-    artifactId = 'AndroidTutorialBubbles'
-    version = '1.0.0'
-    description = 'A little ui framework that displays a styled tutorial bubble, which positions and scales itself based on a given anchor view.'
-    website = 'https://github.com/Lovoo/android-tutorial-bubbles'
-    issueTracker = 'https://github.com/Lovoo/android-tutorial-bubbles/issues'
-    repository = 'https://github.com/Lovoo/android-tutorial-bubbles.git'
-}
