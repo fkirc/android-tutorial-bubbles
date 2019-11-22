@@ -31,9 +31,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
 
 /**
  * this ViewGroup serves as container layout for a tutorial layout and supplies this functionality.
@@ -55,10 +53,8 @@ public class TutorialScreenContainerLayout extends ViewGroup {
     private static final int DEFAULT_BUBBLE_CORNER_RADIUS = 5;
     private static final int DEFAULT_OFFSET_FROM_ANCHOR = 5;
 
-    @CheckForNull
     private View mAnchor;
 
-    @Nonnull
     private Rect mAnchorBounds;
 
     private LinkedHashMap<Integer, DisplayBox> mDisplayAreas;
@@ -85,7 +81,7 @@ public class TutorialScreenContainerLayout extends ViewGroup {
     private boolean mIsWindowTranslucent;
     private boolean mIsWindowManaged;
 
-    @Nonnull
+    
     private ArrayList<HighlightEntry> mHightlightViews;
     private ChildPos mChildPos;
 
@@ -248,7 +244,7 @@ public class TutorialScreenContainerLayout extends ViewGroup {
      *
      * @param hightlightViews collection of views
      */
-    public void setHighlightViews ( @Nonnull ArrayList<TutorialScreen.HighlightView> hightlightViews ) {
+    public void setHighlightViews (  ArrayList<TutorialScreen.HighlightView> hightlightViews ) {
         boolean resetCache = false;
         boolean resetBackground = false;
         View view;
@@ -357,7 +353,7 @@ public class TutorialScreenContainerLayout extends ViewGroup {
         }
     }
 
-    private void measureTutorialInLargestBox ( @Nonnull View tutorial ) {
+    private void measureTutorialInLargestBox (  View tutorial ) {
         int bestGravity = 0;
         float bestValue = Float.MAX_VALUE;
 
@@ -459,7 +455,7 @@ public class TutorialScreenContainerLayout extends ViewGroup {
         return relativePos;
     }
 
-    private ChildPos calcInnerBoxPosition ( @Nonnull DisplayBox displayBox, @Nonnull View tutorial ) {
+    private ChildPos calcInnerBoxPosition (  DisplayBox displayBox,  View tutorial ) {
         ChildPos childPos = new ChildPos(displayBox.rect.left, displayBox.rect.top);
 
         switch (displayBox.gravity) {
@@ -661,12 +657,12 @@ public class TutorialScreenContainerLayout extends ViewGroup {
      * an quadrant area inside the layout based upon an anchor.
      */
     private static class DisplayBox implements Comparable<DisplayBox> {
-        @Nonnull
+        
         Rect rect;
         int gravity;
         int area;
 
-        public DisplayBox ( @Nonnull Rect rect, int gravity ) {
+        public DisplayBox (  Rect rect, int gravity ) {
             this.rect = rect;
             this.area = rect.width() * rect.height();
             this.gravity = gravity;
@@ -700,7 +696,7 @@ public class TutorialScreenContainerLayout extends ViewGroup {
         View view;
         boolean useBoundsAsmask;
 
-        public HighlightEntry ( @Nonnull View view, @Nonnull Rect rect, @Nullable Bitmap cache, boolean useBoundsAsmask ) {
+        public HighlightEntry (  View view,  Rect rect, Bitmap cache, boolean useBoundsAsmask ) {
             this.view = view;
             this.useBoundsAsmask = useBoundsAsmask;
             this.rect = rect;

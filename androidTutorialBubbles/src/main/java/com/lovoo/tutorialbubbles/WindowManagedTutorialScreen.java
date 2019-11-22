@@ -8,8 +8,6 @@ import android.view.WindowManager;
 import com.lovoo.tutorialbubbles.utils.Utils;
 import com.lovoo.tutorialbubbles.layout.TutorialScreenContainerLayout;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
 
 /**
  * This implementation of TutorialScreen uses androids {@link WindowManager} to display a tutorial popup.
@@ -21,12 +19,10 @@ public class WindowManagedTutorialScreen extends TutorialScreen {
 
     public static final String TAG = WindowManagedTutorialScreen.class.getSimpleName();
 
-    @Nonnull
     private WindowManager mWindowManager;
-    @CheckForNull
     private WindowEntry mAddedView;
 
-    protected WindowManagedTutorialScreen ( @Nonnull TutorialBuilder builder ) {
+    protected WindowManagedTutorialScreen ( TutorialBuilder builder ) {
         super(builder);
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         init(builder);

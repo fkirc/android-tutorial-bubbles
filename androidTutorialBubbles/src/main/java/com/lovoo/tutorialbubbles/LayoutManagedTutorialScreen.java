@@ -5,8 +5,7 @@ import android.view.ViewGroup;
 
 import com.lovoo.tutorialbubbles.layout.TutorialScreenContainerLayout;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+
 
 
 /**
@@ -19,13 +18,11 @@ class LayoutManagedTutorialScreen extends TutorialScreen {
 
     private static final String TAG = LayoutManagedTutorialScreen.class.getSimpleName();
 
-    @Nullable
     private final View mParent;
-    @Nonnull
     private View mContainerLayout;
     private boolean mIsShowing;
 
-    public LayoutManagedTutorialScreen ( @Nonnull TutorialBuilder builder ) {
+    public LayoutManagedTutorialScreen (  TutorialBuilder builder ) {
         super(builder);
         mParent = builder.mParentContainer;
         init(builder);

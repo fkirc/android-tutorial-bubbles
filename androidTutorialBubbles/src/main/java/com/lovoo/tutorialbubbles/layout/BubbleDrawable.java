@@ -13,7 +13,6 @@ import android.view.Gravity;
 
 import com.lovoo.tutorialbubbles.utils.Vector2D;
 
-import javax.annotation.Nonnull;
 
 /**
  * Drawable that draws an Comic-Style-Bubble. You have to config this Drawable by code with
@@ -402,7 +401,7 @@ public class BubbleDrawable extends Drawable {
     }
 
     @Override
-    public void draw ( @Nonnull Canvas canvas ) {
+    public void draw ( Canvas canvas ) {
         if (mBubblePath == null || mBubblePaint == null) {
             return;
         }

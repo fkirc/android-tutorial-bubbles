@@ -12,8 +12,6 @@ import com.lovoo.tutorialbubbles.utils.Utils;
 
 import java.util.ArrayList;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
 
 /**
  * Abstract class that handles creation and display state of a tutorial.
@@ -31,7 +29,7 @@ import javax.annotation.Nonnull;
 public abstract class TutorialScreen {
 
     //region members
-    @Nonnull
+    
     protected Context mContext;
     protected boolean mShouldShow = false;
     //endregion
@@ -155,27 +153,27 @@ public abstract class TutorialScreen {
      */
     public static class TutorialBuilder {
 
-        @Nonnull
+        
         protected Context mContext;
-        @Nonnull
+        
         protected final Integer mTutorialLayoutRes;
-        @Nonnull
+        
         protected final View mAnchorView;
-        @CheckForNull
+
         protected OnTutorialLayoutInflatedListener mTutorialLayoutInflatedListener;
-        @CheckForNull
+
         protected Integer mFunnelWidth;
-        @CheckForNull
+
         protected Integer mFunnelLength;
-        @CheckForNull
+
         protected Integer mBackgroundColor;
-        @CheckForNull
+
         protected Boolean mDismissible;
-        @Nonnull
+        
         protected ArrayList<HighlightView> mHighlightViews;
-        @CheckForNull
+
         protected View mParentContainer;
-        @CheckForNull
+
         Integer mOffset;
 
         /**
@@ -184,7 +182,7 @@ public abstract class TutorialScreen {
          * @param tutorialLayoutRes a layout resource
          * @param anchorView        a view at which the layout resource will be displayed to
          */
-        public TutorialBuilder ( @Nonnull Integer tutorialLayoutRes, @Nonnull View anchorView ) {
+        public TutorialBuilder (  Integer tutorialLayoutRes,  View anchorView ) {
             this.mContext = anchorView.getContext();
             this.mTutorialLayoutRes = tutorialLayoutRes;
             this.mAnchorView = anchorView;
@@ -196,7 +194,7 @@ public abstract class TutorialScreen {
          *
          * @return TutorialScreen Instance
          */
-        @CheckForNull
+
         public TutorialScreen build () {
             if (mParentContainer != null) {
                 return new LayoutManagedTutorialScreen(this);
