@@ -1,3 +1,9 @@
+# Deprecation notice
+
+I deprecate this package because I believe the traditional "XML-based UI" is no longer suitable for future development.
+Instead, I recommend embracing a modern declarative UI framework.
+Declarative UIs, popularized by frameworks like Flutter and React, are, in my opinion, vastly superior to traditional XML-UIs.
+
 # AndroidTutorialBubbles [![Build Status](https://travis-ci.org/Lovoo/android-tutorial-bubbles.svg)](https://travis-ci.org/Lovoo/android-tutorial-bubbles) [![Download](https://api.bintray.com/packages/lovoo/maven/AndroidTutorialBubbles/images/download.svg) ](https://bintray.com/lovoo/maven/AndroidTutorialBubbles/_latestVersion)
 A little ui framework that displays a styled tutorial bubble, which positions and scales itself based on a given anchor view.
 
